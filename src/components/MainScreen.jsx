@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import BarChart from './BarChart'
+import DonutChart from './DonutChart'
 
 const MainScreen = (props) => {
     const [searchData, setSearchData] = useState({brand: '', model: ''})
@@ -113,6 +114,7 @@ const MainScreen = (props) => {
                     </div>
                     <div className="col-md-4">
                         <BarChart />
+                        <DonutChart />
                     </div>
                 </div>
             </div>

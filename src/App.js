@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 import MainScreen from './components/MainScreen';
 import AddScreen from './components/AddScreen';
 import NavBar from './components/navbar';
-import Graph from './d3';
 
 function App() {
     

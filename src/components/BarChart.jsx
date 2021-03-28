@@ -10,11 +10,8 @@ const BarChart = (props) => {
     let noDup = years.filter((year, id) => (
         years.indexOf(year) === id
     )).sort();
-    console.log(years);
-    console.log(noDup);
     let mobNum = [];
     for(let i=0; i< noDup.length; i++){
-        console.log(mobiles);
         let count = 0;
         for(let j=0; j< mobiles.length; j++){
             if(noDup[i] === mobiles[j].year){
@@ -23,7 +20,6 @@ const BarChart = (props) => {
         }
         mobNum.push(count)
     }
-    console.log(mobNum);
 
     useEffect(()=>{
         const height = 250;
