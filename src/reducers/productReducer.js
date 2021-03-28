@@ -4,6 +4,8 @@ const initialState = {
     items: [
         { brand: 'nokia', model: 'N73', year: '2008', color: 'black'},
         { brand: 'nokia', model: '6600', year: '2005', color: 'white'},
+        { brand: 'apple', model: 'iphone7', year: '2008', color: 'black'},
+        { brand: 'nokia', model: '6600', year: '2010', color: 'white'},
         { brand: 'apple', model: 'iphone7', year: '2020', color: 'black'}
     ]
 };

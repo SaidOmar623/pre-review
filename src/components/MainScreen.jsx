@@ -2,11 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux'
+import Graph from '../d3';
 
 const MainScreen = (props) => {
     const [searchData, setSearchData] = useState({brand: '', model: ''})
     const mobiles = useSelector(state => state.products.items)
     const [searchResult, setSearchResult] = useState([])
+    const [singleMobile, setSingleMobile] = useState(null);
 
     const handleChange = (e)=>{
         const name = e.target.name;
@@ -25,20 +27,9 @@ const MainScreen = (props) => {
         }
     }
 
-    let info = null
     const mobileInfoHandler = (mobile)=>{
-        info = (
-                <div>
-                    <h5>Selected Mobile</h5>
-                    <ul className="list-unstyled">
-                        <li>brand: {mobile.brand}</li>
-                        <li>model: {mobile.model}</li>
-                        <li>Manufactor Year: {mobile.year}</li>
-                        <li>color: {mobile.color}</li>
-                        <li>screen: {mobile.screen}</li>
-                    </ul>
-                </div>);
-                console.log(info);
+        setSingleMobile(mobile);
+        console.log(singleMobile);
     }
     return(
         <div className="main">
@@ -107,11 +98,21 @@ const MainScreen = (props) => {
                             </tbody>
                         </table>
                         <div className="selected-mobl">
-                            {info? info : 'Select Mobile tp more info' }
+                            {singleMobile? (
+                                <div className="selected-data">
+                                    <h5>Selected Mobile</h5>
+                                    <ul className="list-unstyled">
+                                        <li><span>brand:</span> {singleMobile.brand}</li>
+                                        <li><span>model:</span> {singleMobile.model}</li>
+                                        <li><span>Manufactor Year:</span> {singleMobile.year}</li>
+                                        <li><span>color:</span> {singleMobile.color}</li>
+                                        <li><span>screen:</span> {singleMobile.screen}</li>
+                                    </ul>
+                                </div>) : <h5 className="text-center">Select Mobile to more info</h5> }
                         </div>
                     </div>
                     <div className="col-md-4">
-
+                        <Graph />
                     </div>
                 </div>
             </div>
