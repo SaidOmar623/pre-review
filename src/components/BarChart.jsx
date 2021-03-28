@@ -55,7 +55,7 @@ const BarChart = (props) => {
     //    .attr("dy", ".35em")
        .attr('fill', 'white')
        .text(function (d) { return d; });
-    },[])
+    },[mobNum])
     return (
         <div className="canv">
         </div>

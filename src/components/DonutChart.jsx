@@ -61,7 +61,7 @@ const DonutChart = (props) => {
                 return color(i);
             })
             .attr("d", arc);
-    })
+    },[mobNum])
     return (
         <div className="canv"></div>
     )
