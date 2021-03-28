@@ -1,8 +1,8 @@
-import React from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import {useSelector} from 'react-redux'
-import Graph from '../d3';
+import BarChart from './BarChart'
 
 const MainScreen = (props) => {
     const [searchData, setSearchData] = useState({brand: '', model: ''})
@@ -112,7 +112,7 @@ const MainScreen = (props) => {
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <Graph />
+                        <BarChart />
                     </div>
                 </div>
             </div>
